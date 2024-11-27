@@ -1,0 +1,96 @@
+/* ****** Own personalization ****** */
+
+body {
+  color: black;
+}
+
+/* Character section */
+#character {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 20px;
+  }
+  
+  .content-characters {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 300px;
+    padding: 15px;
+  }
+  
+  .image-holder {
+    width: 100%;
+    overflow: hidden;
+    margin-bottom: 15px;
+  }
+  
+  .img-character {
+    width: 100%;
+    height: auto;
+  }
+  
+  #shaggy img {
+    width: 120px;
+    height: 356px;
+    margin-left: 50pt;
+  }
+  
+  #daphne img {
+    width: 100px;
+    height: 356px;
+    margin-left: 50pt;
+  }
+  
+  #scooby img {
+    width: 200px;
+    height: 356px;
+    margin-left: 10pt;
+  }
+  
+  #velma img {
+    width: 300px;
+    height: 300px;
+  }
+  
+  .element-title {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+    text-align: center;
+  }
+  
+  .text-center {
+    text-align: center;
+  }
+  
+  @media (max-width: 768px) {
+    #character {
+      flex-direction: column;
+      align-items: center;
+    }
+    
+    .content-characters {
+      max-width: 100%;
+    }
+  
+    #velma img {
+      margin-left: 50pt;
+    }
+  
+    #scooby img {
+      margin-left: 80pt;
+    }
+  
+    #shaggy img, #daphne img {
+      margin-left: 120pt;
+    }
+  }
+  
+  /* Introduction section */
+  
+  
+  
+  
+  
