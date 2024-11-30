@@ -87,8 +87,9 @@ footer a {
   }
   
   #velma img {
-    width: 300px;
-    height: 300px;
+    width: 200px;
+    height: 400px;
+    margin-left: 40pt;
   }
   
   .element-title {
@@ -112,7 +113,7 @@ footer a {
     }
   
     #velma img {
-      margin-left: 50pt;
+      margin-left: 80pt;
     }
   
     #scooby img {
