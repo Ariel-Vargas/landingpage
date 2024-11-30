@@ -86,12 +86,6 @@ footer a {
     margin-left: 10pt;
   }
   
-  #velma img {
-    width: 200px;
-    height: 400px;
-    margin-left: 40pt;
-  }
-  
   .element-title {
     font-size: 1.5em;
     margin-bottom: 10px;
@@ -102,7 +96,7 @@ footer a {
     text-align: center;
   }
   
-  @media (max-width: 768px) {
+  @media (max-width: 941px) {
     #character {
       flex-direction: column;
       align-items: center;
@@ -110,10 +104,6 @@ footer a {
     
     .content-characters {
       max-width: 100%;
-    }
-  
-    #velma img {
-      margin-left: 80pt;
     }
   
     #scooby img {
