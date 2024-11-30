@@ -1,35 +1,42 @@
 const databaseURL = 'https://landing2-f3d3a-default-rtdb.firebaseio.com/data.json';
 
-let sendData = () => {
+const sendData = () => {
+const form = document.getElementById("form");
 
-    // Obtén los datos del formulario
-    const formData = new FormData(form);
-    const data = Object.fromEntries(formData.entries()); // Convierte FormData a objeto
-    data['saved'] = new Date().toLocaleString('es-CO', { timeZone: 'America/Guayaquil' })
+const formData = new FormData(form);
 
-    fetch(databaseURL, {
-        method: 'POST', // Método de la solicitud
-        headers: {
-            'Content-Type': 'application/json' // Especifica que los datos están en formato JSON
-        },
-        body: JSON.stringify(data) // Convierte los datos a JSON
+const data = Object.fromEntries(formData.entries());
+data["saved"] = new Date().toLocaleString("es-CO", {
+    timeZone: "America/Guayaquil",
+});
+
+fetch(databaseURL, {
+    method: "POST",
+    headers: {
+    "Content-Type": "application/json",
+    },
+    body: JSON.stringify(data),
+})
+    .then((response) => {
+    if (!response.ok) {
+        alert(
+        "Agradeciendo tu preferencia, nos mantenemos actualizados y enfocados en atenderte como mereces",
+        );
+        form.reset();
+    }
+    return response.json();
     })
-        .then(response => {
-            if (!response.ok) {
-                throw new Error(`Error en la solicitud: ${response.statusText}`);
-            }
-            return response.json(); // Procesa la respuesta como JSON
-        })
-        .then(result => {
-            alert('Agradeciendo tu preferencia, nos mantenemos actualizados y enfocados en atenderte como mereces'); // Maneja la respuesta con un mensaje
-            form.reset();
-            getData();
-        })
-        .catch(error => {
-            alert('Hemos experimentado un error. ¡Vuelve pronto!'); // Maneja el error con un mensaje
-        });
-
-}
+    .then((result) => {
+    alert(
+        "Agradeciendo tu preferencia, nos mantenemos actualizados y enfocados en atenderte como mereces",
+    );
+    form.reset();
+    getData();
+    })
+    .catch((error) => {
+    alert("Hemos experimentado un error. ¡Vuelve pronto!");
+    });
+};
 
 let getData = async () => {
     try {
@@ -46,36 +53,36 @@ let getData = async () => {
         const data = await response.json();
 
         if (data != null) {
-            // Cuenta el número de personas que eligieron cada película favorita
-            let countMovies = new Map();
-
+            let countSubscribers = new Map();
+      
             if (Object.keys(data).length > 0) {
-                for (let key in data) {
-                    let { email, saved, favoriteMovie } = data[key];
-                    
-                    let count = countMovies.get(favoriteMovie) || 0;
-                    countMovies.set(favoriteMovie, count + 1);
-                }
+              for (let key in data) {
+                let { email, saved } = data[key];
+      
+                let date = saved.split(",")[0];
+      
+                let count = countSubscribers.get(date) || 0;
+                countSubscribers.set(date, count + 1);
+              }
             }
-
-            // Genera y agrega filas de una tabla HTML para mostrar películas y cantidades de personas que las eligieron
-            if (countMovies.size > 0) {
-                const peliculaTableBody = document.getElementById('pelicula');
-                peliculaTableBody.innerHTML = '';
-
-                let index = 1;
-                for (let [movie, count] of countMovies) {
-                    let rowTemplate = `
-                        <tr>
-                            <th scope="row">${index}</th>
-                            <td>${movie}</td>
-                            <td>${count}</td>
-                        </tr>`;
-                    peliculaTableBody.innerHTML += rowTemplate;
-                    index++;
-                }
+      
+            if (countSubscribers.size > 0) {
+              const subscribers = document.getElementById("subscribers");
+              subscribers.innerHTML = "";
+      
+              let i = 1;
+              for (let [date, count] of countSubscribers) {
+                let rowTemplate = `
+                               <tr>
+                                   <th scope="row">${i}</th>
+                                   <td>${date}</td>
+                                   <td>${count}</td>
+                               </tr>`;
+                subscribers.innerHTML += rowTemplate;
+                i++;
+              }
             }
-        }
+          }
 
     } catch (error) {
         alert('Hemos experimentado un error. ¡Vuelve pronto!'); // Maneja el error con un mensaje
@@ -83,46 +90,45 @@ let getData = async () => {
 }
 
 
-
-
 let ready = () => {
-    console.log('DOM está listo');
-    getData();
-}
+console.log("DOM está listo");
+
+getData();
+};
 
 let loaded = () => {
-    console.log('Iframes e Images cargadas')
-    let myform = document.getElementById('form');
-    myform.addEventListener('submit', (eventSubmit) => {
-        eventSubmit.preventDefault();
+console.log("Iframes e Images cargadas");
 
-        const emailElement = document.querySelector('.form-control-lg');
+let myform = document.getElementById("form");
+myform.addEventListener("submit", (eventSubmit) => {
+    eventSubmit.preventDefault();
 
-        const emailText = emailElement.value;
+    let emailElement = document.querySelector(".form-control-lg");
+    let emailText = emailElement.value;
 
-        if (emailText.length === 0) {
-            emailElement.animate(
-                [
-                    { transform: "translateX(0)" },
-                    { transform: "translateX(25px)" },
-                    { transform: "translateX(-25px)" },
-                    { transform: "translateX(0)" }
-                ],
-                {
-                    duration: 400,
-                    easing: "linear",
-                }
-            )
-            emailElement.focus()
-            return
-        }
+    if (emailText.length === 0) {
+    emailElement.focus();
 
-        sendData();
-    })
+    const animation = new Animation(
+        new KeyframeEffect(
+        emailElement,
+        [
+            { transform: "translateX(0)" },
+            { transform: "translateX(50px)" },
+            { transform: "translateX(-50px)" },
+            { transform: "translateX(0)" },
+        ],
+        { duration: 400, iterations: 1 },
+        ),
+    );
 
-}
+    animation.play();
+    return;
+    }
 
-
-
-//window.addEventListener("DOMContentLoaded", ready);
-window.addEventListener("load", loaded);
+    sendData();
+});
+};
+  
+  window.addEventListener("DOMContentLoaded", ready);
+  window.addEventListener("load", loaded);

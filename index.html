@@ -164,12 +164,12 @@
 
   <!--Modified this part for my landing page about Scooby Doo Fan Page -->
   
-  <nav class="navbar navbar-expand-lg bg-light text-uppercase fs-6 p-3 border-bottom align-items-center">
+  <nav class="navbar navbar-expand-lg text-uppercase fs-6 p-3 border-bottom align-items-center">
     <div class="container-fluid">
       <div class="row justify-content-between align-items-center w-100">
         <div class="col-auto">
           <a class="navbar-brand text-white" href="index.html">
-            <svg width="150" height="45" viewBox="0 0 112 45" xmlns="http://www.w3.org/2000/svg" fill="#111">
+            <svg width="180" height="45" viewBox="0 0 112 45" xmlns="http://www.w3.org/2000/svg" fill="#111">
               <text x="0" y="30" class="text">SCOOBY-DOO</text>
             </svg> 
           </a>
@@ -280,7 +280,8 @@
   <section id="introduction" class="bg-light py-5">
     <div class="container">
       <div class="row justify-content-center">
-        <h1 class="section-title text-center mt-4" data-aos="fade-up">Introducción</h1>
+        <h1 id="fan_page">Fan Page de Scooby Doo</h1>
+        <h2 class="section-title text-center mt-4" data-aos="fade-up">Introducción</h2>
         <div class="col-md-6 text-center" data-aos="fade-up" data-aos-delay="300">
           <p>
             Scooby-Doo es una icónica serie animada de misterio que ha capturado la imaginación de generaciones desde su debut en 1969. 
@@ -292,7 +293,7 @@
       </div>
       <div class="container" id="curiousdata">
         <div class="row justify-content-center">
-          <h1 class="section-title text-center mt-4" data-aos="fade-up">Datos Curiosos</h1>
+          <h2 class="section-title text-center mt-4" data-aos="fade-up">Datos Curiosos</h2>
           <div class="col-md-6 text-center" data-aos="fade-up" data-aos-delay="300">
             <ol>
               <li>El Nombre Completo de Scooby-Doo
@@ -401,7 +402,7 @@
 <!-- ***** Fin de la sección de personajes *****-->
 
   <!-- ****** Seccion de Peliculas ****** -->
-  <section class="movies py-5">
+  <section class="movies py-5" id="pelicula">
     <div class="container">
         <div class="d-flex flex-wrap justify-content-between align-items-center mt-5 mb-3">
             <h4 class="text-uppercase">Peliculas</h4>
@@ -416,7 +417,7 @@
                     <article class="post-item">
                         <div class="post-image">
                             <a href="index.html">
-                                <img src="images/scooby doo y la persecucion cibernetica.jpg" alt="Scooby-Doo Animated Movie 1" class="post-grid-image img-fluid">
+                                <img src="images/SD_Cyber_Chase.jpg" alt="Scooby-Doo Animated Movie 1" class="post-grid-image img-fluid" id="persecucion">
                             </a>
                         </div>
                         <div class="post-content d-flex flex-wrap gap-2 my-3">
@@ -435,7 +436,7 @@
                     <article class="post-item">
                         <div class="post-image">
                             <a href="index.html">
-                                <img src="images/scooby doo y el monstruo del lago ness.jpg" alt="Scooby-Doo Animated Movie 2" class="post-grid-image img-fluid">
+                                <img src="images/scooby doo y el monstruo del lago ness.jpg" alt="Scooby-Doo Animated Movie 2" class="post-grid-image img-fluid" id="ness">
                             </a>
                         </div>
                         <div class="post-content d-flex flex-wrap gap-2 my-3">
@@ -454,7 +455,7 @@
                     <article class="post-item">
                         <div class="post-image">
                             <a href="index.html">
-                                <img src="images/scooby doo piratas ahoy.jpg" alt="Scooby-Doo Animated Movie 3" class="post-grid-image img-fluid">
+                                <img src="images/scooby doo piratas ahoy.jpg" alt="Scooby-Doo Animated Movie 3" class="post-grid-image img-fluid" id="piratas">
                             </a>
                         </div>
                         <div class="post-content d-flex flex-wrap gap-2 my-3">
@@ -480,7 +481,7 @@
                     <article class="post-item">
                         <div class="post-image">
                             <a href="index.html">
-                                <img src="images/scooby-doo movie.jpg" alt="Scooby-Doo Live Action Movie 1" class="post-grid-image img-fluid">
+                                <img src="images/scooby-doo movie.jpg" alt="Scooby-Doo Live Action Movie 1" class="post-grid-image img-fluid" id="inicios">
                             </a>
                         </div>
                         <div class="post-content d-flex flex-wrap gap-2 my-3">
@@ -489,7 +490,7 @@
                                 <span class="meta-day"> 2002</span>
                             </div>
                             <h5 class="post-title text-uppercase">
-                                <a href="index.html">Scooby-Doo</a>
+                                <a href="index.html">Scooby-Doo - The Movie</a>
                             </h5>
                             <p>La primera película de acción real de Scooby-Doo donde la pandilla se enfrenta a un parque temático embrujado.</p>
                         </div>
@@ -499,7 +500,7 @@
                     <article class="post-item">
                         <div class="post-image">
                             <a href="index.html">
-                                <img src="images/scooby-doo monster unleashed.jpeg" alt="Scooby-Doo Live Action Movie 2" class="post-grid-image img-fluid">
+                                <img src="images/scooby-doo monster unleashed.jpeg" alt="Scooby-Doo Live Action Movie 2" class="post-grid-image img-fluid" id="unleashed">
                             </a>
                         </div>
                         <div class="post-content d-flex flex-wrap gap-2 my-3">
@@ -518,7 +519,7 @@
                     <article class="post-item">
                         <div class="post-image">
                             <a href="index.html">
-                                <img src="images/scooby-doo mystery begin.jpg" alt="Scooby-Doo Live Action Movie 3" class="post-grid-image img-fluid">
+                                <img src="images/scooby-doo mystery begin.jpg" alt="Scooby-Doo Live Action Movie 3" class="post-grid-image img-fluid" id="begin">
                             </a>
                         </div>
                         <div class="post-content d-flex flex-wrap gap-2 my-3">
@@ -557,7 +558,7 @@
                     <article class="post-item">
                         <div class="post-image">
                             <a href="index.html">
-                                <img src="images/scooby doo where are you.jpeg" alt="Scooby-Doo Animated Series 1" class="post-grid-image img-fluid">
+                                <img src="images/scooby doo where are you.jpeg" alt="Scooby-Doo Animated Series 1" class="post-grid-image img-fluid" id="where_you">
                             </a>
                         </div>
                         <div class="post-content d-flex flex-wrap gap-2 my-3">
@@ -576,7 +577,7 @@
                     <article class="post-item">
                         <div class="post-image">
                             <a href="index.html">
-                                <img src="images/scooby doo what's new.jpeg" alt="Scooby-Doo Animated Series 2" class="post-grid-image img-fluid">
+                                <img src="images/scooby doo what's new.jpeg" alt="Scooby-Doo Animated Series 2" class="post-grid-image img-fluid" id="whats_new">
                             </a>
                         </div>
                         <div class="post-content d-flex flex-wrap gap-2 my-3">
@@ -595,7 +596,7 @@
                     <article class="post-item">
                         <div class="post-image">
                             <a href="index.html">
-                                <img src="images/scooby-doo mystery incorporated.jpg" alt="Scooby-Doo Animated Series 3" class="post-grid-image img-fluid">
+                                <img src="images/scooby-doo mystery incorporated.jpg" alt="Scooby-Doo Animated Series 3" class="post-grid-image img-fluid" id="my_inc">
                             </a>
                         </div>
                         <div class="post-content d-flex flex-wrap gap-2 my-3">
@@ -659,7 +660,7 @@
                 <article class="post-item">
                     <div class="post-image">
                         <a href="index.html">
-                            <img src="images/scooby doo curiosidades.jpg" alt="Scooby-Doo Image" class="post-grid-image img-fluid">
+                            <img src="images/Scooby-Doo datos.jpg" alt="Scooby-Doo Image" class="post-grid-image img-fluid" id="curioso">
                         </a>
                     </div>
                     <div class="post-content d-flex flex-wrap gap-2 my-3">
@@ -678,13 +679,13 @@
                 <article class="post-item">
                     <div class="post-image">
                         <a href="index.html">
-                            <img src="images/scooby doo personajes completos.jpg" alt="Scooby-Doo Image" class="post-grid-image img-fluid">
+                            <img src="images/scooby doo personajes completos.jpg" alt="Scooby-Doo Image" class="post-grid-image img-fluid" id="conocer_personaje">
                         </a>
                     </div>
                     <div class="post-content d-flex flex-wrap gap-2 my-3">
                         <div class="post-meta text-uppercase fs-6 text-secondary">
                             <span class="post-category">Scooby-Doo /</span>
-                            <span class="meta-day"> Nov 27, 2024</span>
+                            <span class="meta-day"> Sep 27, 2024</span>
                         </div>
                         <h5 class="post-title text-uppercase">
                             <a href="index.html">Conoce a los Personajes de Scooby-Doo</a>
@@ -697,18 +698,18 @@
                 <article class="post-item">
                     <div class="post-image">
                         <a href="index.html">
-                            <img src="images/scooby doo episodios.jpg" alt="Scooby-Doo Image" class="post-grid-image img-fluid">
+                            <img src="images/scooby doo episodios.jpg" alt="Scooby-Doo Image" class="post-grid-image img-fluid" id="memorable">
                         </a>
                     </div>
                     <div class="post-content d-flex flex-wrap gap-2 my-3">
                         <div class="post-meta text-uppercase fs-6 text-secondary">
                             <span class="post-category">Scooby-Doo /</span>
-                            <span class="meta-day"> Nov 27, 2024</span>
+                            <span class="meta-day"> Jul 27, 2024</span>
                         </div>
                         <h5 class="post-title text-uppercase">
                             <a href="index.html">Episodios Más Memorables</a>
                         </h5>
-                        <p>Revive los episodios más icónicos y emocionantes de Scooby-Doo...</p>
+                        <p>Revive los episodios más icónicos y emocionantes de Scooby-Doo.</p>
                     </div>
                 </article>
             </div>
@@ -720,18 +721,18 @@
   <section id="register" class="newsletter bg-light">
     <div class="container">
       <div class="row justify-content-center">
-
+        <!-- Movies - START -->
         <div class="col-md-4 py-5 my-5">
           <h4 class="element-title text-capitalize my-3">Favorite Movie chosen</h4>
           <table class="table table-hover table-light table-borderless">
               <thead>
                   <tr>
-                      <th scope="col">#</th>
-                      <th scope="col">Movie</th>
+                      <th scope="row">#</th>
+                      <th scope="col">Subscribers</th>
                       <th scope="col">Count</th>
                   </tr>
               </thead>
-              <tbody id="pelicula">
+              <tbody id="subscribers">
               </tbody>
           </table>
       </div>
@@ -739,11 +740,11 @@
 
         <div class="col-md-8 py-5 my-5">
           <div class="subscribe-header text-center pb-3">
-            <h3 class="section-title text-uppercase">Elije tu película favorita</h3>
+            <h3 class="section-title text-uppercase">Suscribete a nuestro blog y elije tu pelicula favorita</h3>
           </div>
           <form id="form" class="d-flex flex-wrap gap-2">
             <input type="text" name="email" placeholder="Your Email Addresss" class="form-control form-control-lg" id="form_name">
-            <select name="select">
+            <select name="select" id="select">
               <option value="monster mexico">Scooby-Doo! and the Monster of Mexico</option>
               <option value="zombie island" selected>Scooby-Doo on Zombie Island</option>
               <option value="brave and bold">Scooby-Doo! & Batman: The Brave and the Bold</option>
